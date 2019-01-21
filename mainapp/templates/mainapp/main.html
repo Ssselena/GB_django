@@ -1,0 +1,46 @@
+{% extends "mainapp/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+                <div class="new-products">
+                    <span id="new-prod-title">New Products</span>
+                    <div class="product-wrap">
+                        <div class="product">
+                            <img class="prod-img" src="../../static/img/board1.jpg" alt="Surf Board">
+                            <a href="products/"><span class="prod-title">Single Thruster 2014</span></a>
+                            <span class="prod-price">865.00</spa>
+                            <div class="prod-old-price">465.00</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-unit-new"></div>
+                            <img class="prod-img" src="{% static 'img/board2.jpg' %}" alt="Surf Board">
+                            <span class="prod-title">Free Style Wave FSW</span>
+                            <span class="prod-price">770.50</spa>
+                        </div>
+                        <div class="product">
+                            <div class="product-preorder"></div>
+                            <img class="prod-img" src="{% static 'img/board3.jpg' %}" alt="Surf Board">
+                            <span class="prod-title">The White Collection<br> Surfboard 2014</span>
+                            <span class="prod-price">1580.70</spa>
+                        </div>
+                        <div class="product">
+                            <img class="prod-img" src="{% static 'img/board4.jpg' %}" alt="Surf Board">
+                            <span class="prod-title">Stripe 19 QS</span>
+                            <span class="prod-price">765.00</spa>
+                                <div class="prod-old-price">500.00</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-preorder"></div>
+                            <img class="prod-img" src="{% static 'img/board5.jpg' %}" alt="Surf Board">
+                            <span class="prod-title">OG Scallop Solid</span>
+                            <span class="prod-price">765.00</spa>
+                        </div>
+                        <div class="product">
+                            <div class="product-unit-new"></div>
+                            <img class="prod-img" src="{% static 'img/board6.jpg' %}" alt="Surf Board">
+                            <span class="prod-title">Yoke 19 QS</span>
+                            <span class="prod-price">220.50</spa>
+                        </div>
+                    </div>
+                </div>
+{% endblock %}
