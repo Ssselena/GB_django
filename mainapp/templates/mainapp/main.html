@@ -1,128 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Surfhouse</title>
-    <link rel="stylesheet" href="../../static/css/surfstyle.css">
-    <link rel="stylesheet" href="fontawesome-free-5.0.12/web-fonts-with-css/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="headerInside">
-            <div id="logo"><img src="../../static/img/surfhouselogo.png" alt="Logo"></div>
-            <div class="social">
-                <a href="www.facebook.com" class="icon"><i class="fab fa-facebook-f" style="color: white"></i></a>
-                <a href="twitter.com" class="icon"><i class="fab fa-twitter" style="color: white"></i></a>
-                <a href="youtube.com" class="icon"><i class="fab fa-youtube" style="color: white"></i></a>
-                <a href="pinterest.com" class="icon"><i class="fab fa-pinterest-p" style="color: white"></i></a>
-                <a href="instagram.com" class="icon"><i class="fab fa-instagram" style="color: white"></i></a>
-            </div>
-            <div class="small-info">
-                <span id="head-inf">WELCOME TO SURFHOUSE</span>
-                <span id="small-inf">The only online store you<br> will ever need for all your windsurfing and kitesurfing and SUP needs</span>
-            </div>
-            <div class="right-info">
-                <span id="left-inf">JP FUNRIDE 2014</span>
-                <span id="left-inf-xs">Super easy going freeride boards based on the X-Cite Ride shape concept with additional control and super easy jibbing.</span>
-            </div>
-            <div id="buy-now-button">
-                <span id="buy-now">BUY NOW</span>
-            </div>
-        </div>
-    </header>
-    <div class="content">
-        <div class="contentInside">
-            <div class="contentInsideLeft">
-                <div class="nav">
-                    <ul class="menu-list">
-                        <li>MENU</li>
-                        <li>ABOUT</li>
-                        <li>APPAREL</li>
-                        <li>SURF&nbsp;APPAREL</li>
-                        <li>WINDSURF</li>
-                        <li>KITESURF</li>
-                        <li>ACCESSORIES</li>
-                        <li>SALE</li>
-                        <li>BRANDS</li>
-                        <li>BLOG</li>
-                        <li>GADGETS</li>
-                        <li><a href="contacts/" class="menu-list">CONTACTS</a></li>
-                    </ul>
+{% extends "mainapp/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="new-products">
+        <div class="product-wrap">
+            {% for product in products %}
+                <div class="product">
+                    <img class="prod-img" src="{{ product.image.url }}" alt="Surf Board">
+                    <a href="products/"><span class="prod-title"> {{ product.name }}</span></a>
+                    <span class="prod-price">{{ product.price }}
+                        <div class="prod-old-price">{{ product.price }}</div>
+                    </span>
                 </div>
-                <!-- <div id="menu-header">
-                    <span id="menu-text">MENU</span>
-                </div> -->
-                <div class="b_new_shop">
-                    <span id="new-shop-sign">New shop</br> is now<br> open!</span>
-                    <img id="shop-img" src="../../static/img/surf-shop.jpg" alt="New shop is now open picture">
-                </div>
-            </div>
-            <div class="contentInsideRight">
-                <div class="new-products">
-                    <span id="new-prod-title">New Products</span>
-                    <div class="product-wrap">
-                        <div class="product">
-                            <img class="prod-img" src="../../static/img/board1.jpg" alt="Surf Board">
-                            <a href="products/"><span class="prod-title">Single Thruster 2014</span></a>
-                            <span class="prod-price">865.00</spa>
-                            <div class="prod-old-price">465.00</div>
-                        </div>
-                        <div class="product">
-                            <div class="product-unit-new"></div>
-                            <img class="prod-img" src="../../static/img/board2.jpg" alt="Surf Board">
-                            <span class="prod-title">Free Style Wave FSW</span>
-                            <span class="prod-price">770.50</spa>
-                        </div>
-                        <div class="product">
-                            <div class="product-preorder"></div>
-                            <img class="prod-img" src="../../static/img/board3.jpg" alt="Surf Board">
-                            <span class="prod-title">The White Collection<br> Surfboard 2014</span>
-                            <span class="prod-price">1580.70</spa>
-                        </div>
-                        <div class="product">
-                            <img class="prod-img" src="../../static/img/board4.jpg" alt="Surf Board">
-                            <span class="prod-title">Stripe 19 QS</span>
-                            <span class="prod-price">765.00</spa>
-                                <div class="prod-old-price">500.00</div>
-                        </div>
-                        <div class="product">
-                            <div class="product-preorder"></div>
-                            <img class="prod-img" src="../../static/img/board5.jpg" alt="Surf Board">
-                            <span class="prod-title">OG Scallop Solid</span>
-                            <span class="prod-price">765.00</spa>
-                        </div>
-                        <div class="product">
-                            <div class="product-unit-new"></div>
-                            <img class="prod-img" src="../../static/img/board6.jpg" alt="Surf Board">
-                            <span class="prod-title">Yoke 19 QS</span>
-                            <span class="prod-price">220.50</spa>
-                        </div>
-                    </div>
-                </div>
-                <div class="brands">
-                    <a href="brand1"><img class="brand-img" src="../../static/img/brand1.png" alt=""></a>
-                    <a href="brand2"><img class="brand-img" src="../../static/img/brand2.png" alt=""></a>
-                    <a href="brand3"><img class="brand-img" src="../../static/img/brand3.png" alt=""></a>
-                    <a href="brand4"><img class="brand-img" src="../../static/img/brand4.png" alt=""></a>
-                    <a href="brand5"><img class="brand-img" src="../../static/img/brand5.png" alt=""></a>
-                    <a href="brand6"><img class="brand-img" src="../../static/img/brand6.png" alt=""></a>
-                    <a href="brand7"><img class="brand-img" src="../../static/img/brand7.png" alt=""></a>
-                    <a href="brand8"><img class="brand-img" src="../../static/img/brand8.png" alt=""></a>
-                </div>
-                <div class="insta-motto">Instagram feed: #surfhouse</div>
-                <div class="insta-wrap">
-                    <div class="insta-feed">
-                        <img class="insta-pic" src="../../static/img/insta1.jpg" alt="">
-                        <img class="insta-pic" src="../../static/img/insta2.jpg" alt="">
-                        <img class="insta-pic" src="../../static/img/insta3.jpg" alt="">
-                        <img class="insta-pic" src="../../static/img/insta5.jpg" alt="">
-                        <img class="insta-pic" src="../../static/img/insta6.jpg" alt="">
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
-</body>
-</html>
+{% endblock %}
+
+
+
+                        <!--<div class="product">-->
+                            <!--<img class="prod-img" src="../../static/img/board1.jpg" alt="Surf Board">-->
+                            <!--<a href="products/"><span class="prod-title">Single Thruster 2014</span></a>-->
+                            <!--<span class="prod-price">865.00</spa>-->
+                            <!--<div class="prod-old-price">465.00</div>-->
+                        <!--</div>-->
+                        <!--<div class="product">-->
+                            <!--<div class="product-unit-new"></div>-->
+                            <!--<img class="prod-img" src="{% static 'img/board2.jpg' %}" alt="Surf Board">-->
+                            <!--<span class="prod-title">Free Style Wave FSW</span>-->
+                            <!--<span class="prod-price">770.50</spa>-->
+                        <!--</div>-->
+                        <!--<div class="product">-->
+                            <!--<div class="product-preorder"></div>-->
+                            <!--<img class="prod-img" src="{% static 'img/board3.jpg' %}" alt="Surf Board">-->
+                            <!--<span class="prod-title">The White Collection<br> Surfboard 2014</span>-->
+                            <!--<span class="prod-price">1580.70</spa>-->
+                        <!--</div>-->
+                        <!--<div class="product">-->
+                            <!--<img class="prod-img" src="{% static 'img/board4.jpg' %}" alt="Surf Board">-->
+                            <!--<span class="prod-title">Stripe 19 QS</span>-->
+                            <!--<span class="prod-price">765.00</spa>-->
+                                <!--<div class="prod-old-price">500.00</div>-->
+                        <!--</div>-->
+                        <!--<div class="product">-->
+                            <!--<div class="product-preorder"></div>-->
+                            <!--<img class="prod-img" src="{% static 'img/board5.jpg' %}" alt="Surf Board">-->
+                            <!--<span class="prod-title">OG Scallop Solid</span>-->
+                            <!--<span class="prod-price">765.00</spa>-->
+                        <!--</div>-->
+                        <!--<div class="product">-->
+                            <!--<div class="product-unit-new"></div>-->
+                            <!--<img class="prod-img" src="{% static 'img/board6.jpg' %}" alt="Surf Board">-->
+                            <!--<span class="prod-title">Yoke 19 QS</span>-->
+                            <!--<span class="prod-price">220.50</spa>-->
+                        <!--</div>-->
